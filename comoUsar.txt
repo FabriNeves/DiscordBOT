@@ -1,0 +1,14 @@
+
+Configurar Bot
+Para obter o token do Bot
+Discord Developer > Bot > token
+
+Para a chave Client_id 
+Discord Developer > Oauth > Client_id
+
+Para obter a chave Guild_id 
+Discord > Entrar no seu servidor > botão direito > copiar id 
+* Se esta opção não aparecer você precisa habilitar o modo desenvolvedor do Discord.
+
+
+https://www.youtube.com/watch?v=zKOf1NGGStE&ab_channel=RafaellaBallerini

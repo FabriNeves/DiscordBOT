@@ -1,0 +1,20 @@
+{
+  "dependencies": {
+    "discord.js": "^14.7.1",
+    "dotenv": "^16.0.3"
+  },
+  "name": "bot-discord-estudo",
+  "version": "1.0.0",
+  "description": "Bot para discord",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "javascript",
+    "bot",
+    "discord"
+  ],
+  "author": "Fabrício Neves",
+  "license": "ISC"
+}
