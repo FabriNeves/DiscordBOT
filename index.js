@@ -1,14 +1,20 @@
-const { Client, Events, GatewayIntentBits, Collection } = require('discord.js')
-//import { ChatGPTAPI } from 'chatgpt'
+import { Client, Events, GatewayIntentBits, Collection } from 'discord.js'
 
 // dotenv
-const dotenv = require('dotenv')
+import dotenv from'dotenv'
 dotenv.config()
-const { TOKEN,OPENAI_API_KEY } = process.env
+const { TOKEN } = process.env
 
 // importação dos comandos
-const fs = require("node:fs")
-const path = require("node:path")
+import fs from "node:fs"
+import path from "node:path"
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+
+const __dirname = path.dirname(__filename);
+
+
 const commandsPath = path.join(__dirname, "commands")
 const commandFiles = fs.readdirSync(commandsPath).filter(file => file.endsWith(".js"))
 
@@ -17,11 +23,11 @@ client.commands = new Collection()
 
 for (const file of commandFiles){
     const filePath = path.join(commandsPath, file)
-    const command = require(filePath)
+    const command = import(filePath);
     if ("data" in command && "execute" in command) {
         client.commands.set(command.data.name, command)
     } else  {
-        console.log(`this command ${filePath} is missing "data" or "execute"`)
+        console.log(`Esse comando em ${filePath} está com "data" ou "execute ausentes"`)
     } 
 }
 

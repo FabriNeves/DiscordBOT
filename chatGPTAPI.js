@@ -1,7 +1,9 @@
-import { ChatGPTAPI } from 'chatgpt'
+const esmRequire = require('esm')(module);
+const ChatGPTAPI = esmRequire('chatgpt');
+//const ChatGPTAPI = require('chatgpt');
 
 
-import dotenv from 'dotenv'
+const dotenv = requir('dotenv');
 dotenv.config()
 const { OPENAI_API_KEY } = process.env
 
@@ -21,4 +23,4 @@ async function askGPT(message) {
     return res.text;
 }
 
-export default askGPT;
+
