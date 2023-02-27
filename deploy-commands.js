@@ -1,22 +1,27 @@
-const { REST, Routes } = require("discord.js")
+import { REST, Routes } from"discord.js";
 
 // dotenv
-const dotenv = require('dotenv')
+import dotenv from 'dotenv';
 dotenv.config()
 const { TOKEN, CLIENT_ID, GUILD_ID } = process.env
 
 // importação dos comandos
-const fs = require("node:fs")
-const path = require("node:path")
-const commandsPath = path.join(__dirname, "commands")
-const commandFiles = fs.readdirSync(commandsPath).filter(file => file.endsWith(".js"))
+// const fs = require("node:fs")
+// const path = require("node:path")
+// const commandsPath = path.join(__dirname, "commands")
+// const commandFiles = fs.readdirSync(commandsPath).filter(file => file.endsWith(".js"))
 
 const commands = []
-
-for (const file of commandFiles) { 
-   const command = require(`./commands/${file}`)
-   commands.push(command.data.toJSON())
-}
+import ping from "./commands/ping.js";
+commands.push(ping.data.toJSON());
+import resposta from "./commands/resposta.js";
+commands.push(resposta.data.toJSON());
+// import respostaDelay from "./commands/respostaDelay.js";
+// commands.push(respostaDelay.data.toJSON());
+// for (const file of commandFiles) { 
+//    const command = require(`./commands/${file}`)
+//    commands.push(command.data.toJSON())
+// }
 
 // instância REST
 const rest = new REST({version: "10"}).setToken(TOKEN);

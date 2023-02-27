@@ -1,14 +1,13 @@
-const esmRequire = require('esm')(module);
-const ChatGPTAPI = esmRequire('chatgpt');
+import {ChatGPTAPI} from 'chatgpt';
 //const ChatGPTAPI = require('chatgpt');
 
 
-const dotenv = requir('dotenv');
+import dotenv from'dotenv';
 dotenv.config()
 const { OPENAI_API_KEY } = process.env
 
 
-console.log(OPENAI_API_KEY);
+//console.log(OPENAI_API_KEY);
 async function askGPT(message) {
 
     if (message == "") {
@@ -18,9 +17,12 @@ async function askGPT(message) {
         apiKey: process.env.OPENAI_API_KEY
     })
 
-    const res = await api.sendMessage(Message);
-    console.log(res.text);
+    const res = await api.sendMessage(message);
+    //console.log(res.text);
     return res.text;
 }
 
+//console.log( await askGPT("O que um bot de discord pode fazer ?"));
+
+export default askGPT;
 

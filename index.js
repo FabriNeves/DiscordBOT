@@ -6,30 +6,17 @@ dotenv.config()
 const { TOKEN } = process.env
 
 // importação dos comandos
-import fs from "node:fs"
-import path from "node:path"
-import { fileURLToPath } from 'url';
-
-const __filename = fileURLToPath(import.meta.url);
-
-const __dirname = path.dirname(__filename);
-
-
-const commandsPath = path.join(__dirname, "commands")
-const commandFiles = fs.readdirSync(commandsPath).filter(file => file.endsWith(".js"))
 
 const client = new Client({ intents: [GatewayIntentBits.Guilds] })
 client.commands = new Collection()
 
-for (const file of commandFiles){
-    const filePath = path.join(commandsPath, file)
-    const command = import(filePath);
-    if ("data" in command && "execute" in command) {
-        client.commands.set(command.data.name, command)
-    } else  {
-        console.log(`Esse comando em ${filePath} está com "data" ou "execute ausentes"`)
-    } 
-}
+import ping from "./commands/ping.js"
+client.commands.set(ping.data.name,ping);
+import resposta from './commands/resposta.js'
+client.commands.set(resposta.data.name,resposta);
+// import respostaDelay from './commands/respostaDelay.js';
+// client.commands.set(respostaDelay.data.name,respostaDelay);
+
 
 // Login do bot
 client.once(Events.ClientReady, c => {
