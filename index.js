@@ -14,8 +14,10 @@ import ping from "./commands/ping.js"
 client.commands.set(ping.data.name,ping);
 import resposta from './commands/resposta.js'
 client.commands.set(resposta.data.name,resposta);
-// import respostaDelay from './commands/respostaDelay.js';
-// client.commands.set(respostaDelay.data.name,respostaDelay);
+//import respostaParcial from './commands/respostaParcial.js'
+//client.commands.set(respostaParcial.data.name,respostaParcial);
+
+
 
 
 // Login do bot
