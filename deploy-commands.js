@@ -6,22 +6,15 @@ dotenv.config()
 const { TOKEN, CLIENT_ID, GUILD_ID } = process.env
 
 // importação dos comandos
-// const fs = require("node:fs")
-// const path = require("node:path")
-// const commandsPath = path.join(__dirname, "commands")
-// const commandFiles = fs.readdirSync(commandsPath).filter(file => file.endsWith(".js"))
 
 const commands = []
 import ping from "./commands/ping.js";
 commands.push(ping.data.toJSON());
 import resposta from "./commands/resposta.js";
 commands.push(resposta.data.toJSON());
-// import respostaDelay from "./commands/respostaDelay.js";
-// commands.push(respostaDelay.data.toJSON());
-// for (const file of commandFiles) { 
-//    const command = require(`./commands/${file}`)
-//    commands.push(command.data.toJSON())
-// }
+// import respostaParcial from "./commands/respostaParcial.js";
+// commands.push(respostaParcial.data.toJSON());
+
 
 // instância REST
 const rest = new REST({version: "10"}).setToken(TOKEN);

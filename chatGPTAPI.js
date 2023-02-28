@@ -1,11 +1,6 @@
 import {ChatGPTAPI} from 'chatgpt';
-//const ChatGPTAPI = require('chatgpt');
-
-
 import dotenv from'dotenv';
 dotenv.config()
-const { OPENAI_API_KEY } = process.env
-
 
 //console.log(OPENAI_API_KEY);
 async function askGPT(message) {
@@ -22,7 +17,6 @@ async function askGPT(message) {
     return res.text;
 }
 
-//console.log( await askGPT("O que um bot de discord pode fazer ?"));
 
 export default askGPT;
 
