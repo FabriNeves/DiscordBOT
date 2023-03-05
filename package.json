@@ -5,7 +5,7 @@
     "dotenv": "^16.0.3",
     "esm": "^3.2.25"
   },
-  "name": "bot-discord-estudo",
+  "name": "DiscordBOT",
   "version": "1.0.0",
   "description": "Bot para discord",
   "main": "index.js",
@@ -19,5 +19,5 @@
     "discord"
   ],
   "author": "Fabrício Neves",
-  "license": "ISC"
+  "license": "MIT"
 }
