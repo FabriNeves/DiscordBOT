@@ -1,6 +1,9 @@
 ﻿<h1>DiscordbotGPT</h1>
 <p>Este é um projeto de um bot para o Discord que utiliza a API de
     linguagem natural do OpenAI, o GPT-3, para responder perguntas e interagir com os usuários.</p>
+<h4><span style="color: red;">WARNING!!!</span></h4>
+<p><span style="color: red;">Verifique isso antes de continuar...</span></p>
+<p><span style="color: red;">Uma versão do NodeJS maior que a 18 é requerida , pois uma versão anterior não tem a função fetch como nativa.</span></p>
 <h2>📺Preview</h2>
 <img src="./img/2023-02-28-13-16-03.gif" loop='3'>
 <h2>📚Bibliotecas</h2>
